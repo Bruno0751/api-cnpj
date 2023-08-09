@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(176, 162, 162);
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <script>
+        fetch('https://publica.cnpj.ws/cnpj/27865757000102', {
+            method: 'GET'
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro de Requisicao");
+                }
+                if (response.ok) {
+                    return response.json();
+                }
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    </script>
+</body>
+
+</html>
